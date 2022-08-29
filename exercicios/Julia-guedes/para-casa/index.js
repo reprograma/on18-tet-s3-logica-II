@@ -59,4 +59,7 @@ function Carrinho(listaDeItens){
   console.log(">>>>Você possui um total de "+cupomDesconto+" cupons para próxima compra!")
   console.log(" ")
 }
+
+Carrinho(listaDeClientes.clienteLilit)
+Carrinho(listaDeClientes.clienteJulia)
 Carrinho(listaDeClientes.clienteWanda)
