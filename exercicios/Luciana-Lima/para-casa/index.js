@@ -104,14 +104,14 @@ console.log(dataFormatada);
 
     console.log("Total da nota:",somaValorProd,"Total descontos:",somaDesc)
     console.log('qtdPecas:',totalPecas)
-    
+
     let aPagar = somaValorProd;
 
       if (metodo == 'pix'|| metodo == 'dinheiro'){
         let extra = somaValorProd * 5 /100;
         aPagar = somaValorProd - extra;
        
-        console.log('============================================================')
+        console.log('=============================================================')
         console.log('Aplicado:Desconto extra de 5% para pagamento à vista ou pix')
         console.log('Valor desconto:',extra)
         console.log('Total com desconto extra:',aPagar)
