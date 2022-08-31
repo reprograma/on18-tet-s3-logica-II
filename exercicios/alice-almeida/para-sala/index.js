@@ -66,3 +66,5 @@ listaPaises.forEach((value, idx) => {
 
 console.log("\nOs resultados são : \n");
 console.table(listaPaises)
+
+// https://stackoverflow.com/questions/10179815/get-loop-counter-index-using-for-of-syntax-in-javascript
