@@ -61,7 +61,7 @@ function calcular(lista, formaDePagamento){
 
       if(pecas > 10 || retorno.valorFinal > 800.0) {
                    
-              console.log(`Parabéns,você ganhou um cupom de R$50,00 para sua próxima compra!`)
+              console.log(`Parabéns,você ganhou um cupom de R$ 50,00 para sua próxima compra!`)
       } 
         
         console.table(retorno)
