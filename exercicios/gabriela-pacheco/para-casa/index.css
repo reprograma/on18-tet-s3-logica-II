@@ -1,0 +1,20 @@
+body {
+    background:linear-gradient(white,#800080) }
+
+    button{
+        font-size: 30px;
+        border-radius: 20px;
+        color: white;
+        background-color: #800080;
+        border-color:transparent;
+        margin-top: 200px;
+        margin-bottom: 200px;
+            }
+
+            footer {
+                margin: 141px;
+            }
+
+            img{
+                width: 50px;
+            }
