@@ -15,6 +15,37 @@ let clienteLilit = {
   ]
 }
 
+let clienteAlice = {
+  pagamento: 'cartão',
+  carrinho: [
+    {produto: 'Bolsa grande preta', valor: 200.0},
+    {produto: 'Short preto', valor: 40},
+    {produto: 'Saia marrom', valor: 85},
+    {produto: 'Macacão jeans', valor: 120},
+    {produto: 'Macaquinho preto', valor: 50}
+  ]
+}
+
+let cliente3 = {
+  pagamento: 'a vista',
+  carrinho: [
+    {produto: 'Bolsa grande vinho', valor: 220.0},
+    {produto: 'Short preto', valor: 40.0},
+    {produto: 'Saia marrom', valor: 85.0},
+    {produto: 'Macacão jeans', valor: 120},
+    {produto: 'Macaquinho preto', valor: 50.0},
+    {produto: 'Blusa simples', valor: 35.0}, 
+    {produto: 'Calça jeans clara', valor: 130.0}, 
+    {produto: 'Blusa preta gola alta', valor: 60.0}, 
+    {produto: 'Short vermelho canelado', valor: 75.0}, 
+    {produto: 'Sapatilha preta', valor: 90.0}, 
+    {produto: 'Tênis casual preto', valor: 120.0}, 
+    {produto: 'Meia calça arrastão', valor: 48.0}
+  ]
+}
+
+listaClientes = [clienteLilit, clienteAlice, cliente3]
+
 let aplicarDesconto = (produto, desconto) => {
   produto.desconto = (produto.valor * desconto)
   produto.porcentagem = `${desconto * 100}%`
@@ -98,10 +129,12 @@ let printarPedido = (pedidoParseado) => {
   if (pedidoParseado.desconto) {
     texto += `\nVocê ganhou um desconto de R$50,00 para sua próxima compra!`
   }
-  texto += `\nPedido efetuado no dia ${pedidoParseado.data} às ${pedidoParseado.hora}`
+  texto += `\nCompra efetuada no dia ${pedidoParseado.data} às ${pedidoParseado.hora}`
 
   console.log(texto)
   console.log(`\n${separador}`)
 }
 
-printarPedido(parsearPedido(clienteLilit))
+for (let cliente of listaClientes) {
+  printarPedido(parsearPedido(cliente))
+}
