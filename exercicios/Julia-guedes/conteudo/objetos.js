@@ -1,0 +1,1 @@
+console.log("Julia"[0])
