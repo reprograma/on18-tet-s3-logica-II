@@ -111,7 +111,7 @@ console.log(dataFormatada);
         let extra = somaValorProd * 5 /100;
         aPagar = somaValorProd - extra;
        
-        console.log('=============================================================')
+        console.log('==============================================================')
         console.log('Aplicado:Desconto extra de 5% para pagamento à vista ou pix')
         console.log('Valor desconto:',extra)
         console.log('Total com desconto extra:',aPagar)
