@@ -1,0 +1,19 @@
+body{
+    background: linear-gradient(white, #b80fb8);
+}
+button{
+    font-size: 18px;
+    border-radius: 20px;
+    color:white;
+    background-color: #b80fb8;
+    border-color: transparent;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    
+}
+footer{
+    margin-top: 141px;
+}
+img{
+    width: 50px;
+}
