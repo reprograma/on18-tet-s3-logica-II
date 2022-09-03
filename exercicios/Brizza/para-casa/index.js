@@ -1,3 +1,5 @@
+let spanRetorno= document.querySelector('.retornodascompras')
+
 let clienteLilit = {
   nome: 'Lilit',
   pagamento: 'pix',
