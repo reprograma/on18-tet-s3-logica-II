@@ -1,0 +1,21 @@
+body {
+    background: linear-gradient(white, #00807a)
+}
+
+button {
+    font-size: 20px;
+    border-radius: 20px;
+    color: white;
+    background: purple;
+    border-color: transparent;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+footer {
+    margin-top: 141px;
+}
+
+img {
+    width: 100px;
+}
