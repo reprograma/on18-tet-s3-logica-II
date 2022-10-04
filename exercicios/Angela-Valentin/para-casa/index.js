@@ -70,3 +70,4 @@ const calcularCompras = (compra) => {
 }
 
 calcularCompras(clienteLilit)
+
