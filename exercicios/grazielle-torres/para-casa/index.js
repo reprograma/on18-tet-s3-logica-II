@@ -1,3 +1,8 @@
+let nomeCliente = document.querySelector('.nomeCliente');
+let dataHorariodaCompra = document.querySelector('.dataHorariodaCompra');
+let valoraPagar = document.querySelector('.valoraPagar')
+let cupomdaCompra = document.querySelector('.cupomdaCompra');
+
 let clienteLilit = {
     nome: 'Lilit',
     pagamento: 'pix',
@@ -38,6 +43,8 @@ let clienteBrizza = {
 }
 
 function carrinhodeCompras(cliente) {
+
+
     let valorTotalsemDesconto = 0;
     let valorTotaldeDesconto = 0;
     let valorposDesconto = 0;
@@ -46,11 +53,12 @@ function carrinhodeCompras(cliente) {
     let desconto = 0;
     let valordoDescontopix = 0;
 
-    console.log(`Cliente: ${cliente.nome}`);
+    nomeCliente.innerHTML = `Cliente: ${cliente.nome}`;
     const date = new Date().toLocaleString();
-    console.log(`Compra realizada em: ${date}`);
+    dataHorariodaCompra.innerHTML = `Compra realizada em: ${date}`;
 
     for (let item of cliente.carrinho) {
+
         if (item.valor >= 60 && item.valor < 100) {
             valordoDesconto = item.valor * 10 / 100;
             valorposDesconto = item.valor - valordoDesconto;
@@ -73,7 +81,6 @@ function carrinhodeCompras(cliente) {
         valorTotaldeDesconto = valorTotaldeDesconto + valordoDesconto;//523.26
         valorFinalcomDesconto = valorTotalsemDesconto - valorTotaldeDesconto;//982,80
 
-        console.log(`Peça: ${item.produto}. ${desconto} O valor final da peça é: ${valorposDesconto}. `);
 
         if (cliente.pagamento == 'pix' || cliente.pagamento == 'à vista') {
             valordoDescontopix = valorFinalcomDesconto * 5 / 100;
@@ -84,12 +91,12 @@ function carrinhodeCompras(cliente) {
             valorFinal = valorFinalcomDesconto.toFixed(2);
         }
     }
-    console.log(`${mensagem} O valor total a pagar é de R$ ${valorFinal}.`);
+    valoraPagar.innerHTML = `${mensagem} O valor total a pagar é de R$ ${valorFinal}.`;
     if (cliente.carrinho.length > 10 || valorFinal > 800) {
-        console.log('Parabéns! Você recebeu um cupom de R$ 50 para utilizar em sua próxima compra.');
+        cupomdaCompra.innerHTML = `Parabéns! Você recebeu um cupom de R$ 50 para utilizar em sua próxima compra.`;
     }
 }
 
 carrinhodeCompras(clienteLilit);
-// carrinhodeCompras(clienteBrizza);
-// carrinhodeCompras(clienteLuciana);
+carrinhodeCompras(clienteBrizza);
+carrinhodeCompras(clienteLuciana);
