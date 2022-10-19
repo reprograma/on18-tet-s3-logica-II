@@ -1,5 +1,6 @@
 let nomeCliente = document.querySelector('.nomeCliente');
 let dataHorariodaCompra = document.querySelector('.dataHorariodaCompra');
+let pecasCompradas = document.querySelector('.pecasCompradas')
 let valoraPagar = document.querySelector('.valoraPagar')
 let cupomdaCompra = document.querySelector('.cupomdaCompra');
 
@@ -94,6 +95,17 @@ function carrinhodeCompras(cliente) {
     valoraPagar.innerHTML = `${mensagem} O valor total a pagar é de R$ ${valorFinal}.`;
     if (cliente.carrinho.length > 10 || valorFinal > 800) {
         cupomdaCompra.innerHTML = `Parabéns! Você recebeu um cupom de R$ 50 para utilizar em sua próxima compra.`;
+    }
+    let produtos = Object.values(cliente.carrinho)
+    for (let peca = 0; peca <= produtos.length; peca++) {
+        if (peca == 0) {
+            quantidade = `peças`
+        } else if (peca == 1) {
+            quantidade = `peça`
+        } else {
+            quantidade = `peças`
+        }
+        pecasCompradas.innerHTML = `Você comprou um total de ${peca} ${quantidade}`
     }
 }
 
