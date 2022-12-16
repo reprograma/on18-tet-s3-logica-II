@@ -14,6 +14,25 @@ let clienteLilit = {
     {produto: 'meia calça transparente', valor: 80.0}
   ]
 }
+let clienteJanny = {
+  pagamento: 'cartão de crédito',
+  carrinho: [
+    {produto: 'Bolsa pequena', valor: 50.0},
+    {produto: 'Calça preta', valor: 290.0},
+    {produto: 'Salto agulha', valor: 250.0},
+    {produto: 'meia calça transparente', valor: 80.0},
+
+  ]
+}
+let clienteAlisson = {
+  pagamento: 'Dinheiro á vista',
+  carrinho: [ 
+    {produto: 'Calça Jeans clara', valor: 130.0},
+    {produto: 'Tênis casual preto', valor: 50.0},
+    {produto: 'Blusa simples', valor: 35.0}, 
+    {produto: 'Blusa preta gola alta', valor: 60.0}, ]}
+
+
 
 const calcularCompras = (compra) => {
   let valorTotal = 0
@@ -24,37 +43,37 @@ const calcularCompras = (compra) => {
   for(let item of compra.carrinho) {
     valorTotal += item.valor
     if(item.valor >= 200.0) {
-      // console.log('%200', item.produto, item.valor)
+       console.log('%200', item.produto, item.valor)
       let desconto = item.valor * 0.5
       descontoAplicado += desconto
       valorFinal += item.valor - desconto
     } else if(item.valor >= 100.0) {
-      // console.log('%100', item.produto, item.valor)
+      console.log('%100', item.produto, item.valor)
       let desconto = item.valor * 0.2
       descontoAplicado += desconto
       valorFinal += item.valor - desconto
     } else if(item.valor >= 60.0) {
-      // console.log('%60', item.produto, item.valor)
+      console.log('%60', item.produto, item.valor)
       let desconto = item.valor * 0.1
       descontoAplicado += desconto
       valorFinal += item.valor - desconto
     } else {
-      // console.log('sem desconto', item.produto, item.valor)
+      console.log('sem desconto', item.produto, item.valor)
       valorFinal += item.valor
     }
   }
 
-  // console.log(quantidadeDeProdutos, valorTotal, descontoAplicado, valorFinal)
+  console.log(quantidadeDeProdutos, valorTotal, descontoAplicado, valorFinal)
 
   if(compra.pagamento == "pix" || compra.pagamento == "a vista") {
     let desconto = valorFinal * 0.05
-    // console.log("DESCONTO DE 5%", desconto)
+     console.log("DESCONTO DE 5%", desconto)
     valorFinal -= desconto
     descontoAplicado += desconto
-    // console.log("VALOR FINAL PARA PIX/AVISTA", valorFinal)
+      console.log("VALOR FINAL PARA PIX/AVISTA", valorFinal)
   }
 
-  // console.log(quantidadeDeProdutos, valorTotal, descontoAplicado, valorFinal)
+      console.log(quantidadeDeProdutos, valorTotal, descontoAplicado, valorFinal)
 
   let notaFiscal = {
     'Valor Total': valorTotal,
@@ -69,4 +88,6 @@ const calcularCompras = (compra) => {
   console.table(notaFiscal)
 }
 
-calcularCompras(clienteLilit)
+calcularCompras(clienteAlisson)
+
+
